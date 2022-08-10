@@ -7,7 +7,14 @@ public class ClienteDTORequest {
 	private String nombrecli;
 	private String documentocli;
 	private String direccioncli;
+	private Integer iddoc;
 	
+	public Integer getIddoc() {
+		return iddoc;
+	}
+	public void setIddoc(Integer iddoc) {
+		this.iddoc = iddoc;
+	}
 	public Integer getIdcli() {
 		return idcli;
 	}

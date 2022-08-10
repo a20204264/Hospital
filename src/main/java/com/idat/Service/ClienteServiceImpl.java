@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.idat.DTO.ClienteDTORequest;
 import com.idat.DTO.ClienteDTOResponse;
+import com.idat.DTO.DoctorDTORequest;
 import com.idat.Model.Cliente;
+import com.idat.Model.Doctor;
 import com.idat.Repository.ClienteRepository;
 @Service
 public class ClienteServiceImpl implements ClienteService {
@@ -55,12 +57,15 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void guardar(ClienteDTORequest cliente) {
+	public void guardar(ClienteDTORequest cliente, DoctorDTORequest doctor) {
+		
 		Cliente c= new Cliente();
+		Doctor d= new Doctor();
 		
 		c.setNombre(cliente.getNombrecli());
 		c.setDocumento(cliente.getDocumentocli());
 		c.setDireccion(cliente.getDireccioncli());
+		d.setIdDoctor(doctor.getIddoc());
 		
 		repository.save(c);
 		

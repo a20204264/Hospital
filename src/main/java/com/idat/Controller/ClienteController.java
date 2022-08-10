@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.idat.DTO.ClienteDTORequest;
 import com.idat.DTO.ClienteDTOResponse;
+import com.idat.DTO.DoctorDTORequest;
 import com.idat.Service.ClienteService;
 
 @Controller
@@ -42,8 +43,8 @@ public class ClienteController {
 						
 			//GUARDAR
 			@RequestMapping(path = "/guardar", method = RequestMethod.POST)
-			public ResponseEntity<Void> guardar(@RequestBody ClienteDTORequest cliente) {
-				service.guardar(cliente);
+			public ResponseEntity<Void> guardar(@RequestBody ClienteDTORequest cliente , @RequestBody DoctorDTORequest doctor ) {
+				service.guardar(cliente, doctor);
 				return new ResponseEntity<Void>(HttpStatus.CREATED);
 			}
 			
